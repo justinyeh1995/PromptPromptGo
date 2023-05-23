@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-var server = 'http://localhost:5000';
+var url = 'http://localhost:3000/summarize';
 
 function FileUpload() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -17,16 +17,12 @@ function FileUpload() {
 
       // Append the selected file to the formData object
       formData.append('file', selectedFile);
-
+      console.log(formData);
       // Send the formData to the server (you can use Axios, fetch, or any other HTTP library)
       // Replace '<upload-url>' with your actual upload endpoint URL
-      axios.post('<upload-url>', formData)
+      axios.post(url, formData)
         .then((response) => {
-                response.json()
-            })
-        .then((data) => {
-            // Handle the response from the server
-            console.log('Upload successful', data);
+                console.log(response.data);
             })
         .catch((error) => {
             // Handle any errors that occurred during the upload
