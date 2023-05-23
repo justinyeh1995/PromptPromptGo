@@ -24,7 +24,7 @@ function App() {
         </button>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Upload a file to promptpromptgo.com and get a summary of the text.
       </p>
       <FileUpload />
     </>
